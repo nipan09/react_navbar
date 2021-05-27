@@ -1,6 +1,7 @@
 import React from 'react'
 import { MenuItems } from './MenuItems'
 import { useState } from 'react'
+import { Button } from '../Button'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
             <div className="menu-icon" onClick = {handleClick}>
                 <i className={click.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
-            <ul>
+            <ul className={click.clicked ? 'nav-menu active' : 'nav-menu'}>
                 { MenuItems.map((item) => {
                     return(                 // map always return
                         <li>
@@ -29,6 +30,7 @@ const Navbar = () => {
                         )
                 })}
             </ul>
+            <Button> SignUp </Button>
         </nav>
     )
 }
